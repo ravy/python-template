@@ -1,0 +1,44 @@
+name: CI for hello-uv # Friendly name
+
+on:
+  push:
+    paths:
+      - "hello-uv/**"
+  pull_request:
+    paths:
+      - "hello-uv/**"
+
+defaults:
+  run:
+    working-directory: hello-uv
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Set up Python 3.14
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          python-version: 3.14
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Format with ruff
+        run: uv run ruff format --check .
+
+      - name: Lint with ruff
+        run: uv run ruff check .
+
+      - name: Test with pytest
+        run: uv run pytest --cov=src/hello_uv

@@ -1,0 +1,65 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[codz]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg
+
+# Unit test / coverage reports
+.tox/
+.nox/
+htmlcov/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+.hypothesis/
+
+# Environments
+.env
+.venv
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Pixi
+.pixi
+
+# IDEs
+.vscode/
+.idea/
+
+# Ruff
+.ruff_cache/
+
+# Logs
+*.log
+
+# Jupyter
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Documentation
+/site
+docs/_build/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Modern packages (PEP 582)
+__pypackages__/
