@@ -1,0 +1,41 @@
+site_name: Greet User Project
+site_url: https://sitename.example
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: green
+    accent: deep purple
+  # features:
+  #   - navigation.tabs
+  #   - navigation.sections
+  #   - toc.integrate
+  #   - search.highlight
+  #   - search.share
+  #   - search.suggest
+
+plugins:
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google
+            docstring_options:
+              ignore_init_summary: true
+            merge_init_into_class: true
+            show_submodules: true
+
+nav:
+  - Home: index.md
+  - API Reference:
+      - Package Overview: api/greet_user.md
+      - Main Module: api/main.md
+      - Greet Module: api/greet.md
+      - Farewell Module: api/farewell.md
+      - Get User Module: api/get_user.md
+  - Project Layout: project-layout.md
+  - Contributing: contributing.md
+  - License: license.md
+
+watch:
+  - src/
